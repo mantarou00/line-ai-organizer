@@ -1,0 +1,6 @@
+フォルダ移動
+cd C:\Users\zakio\OneDrive\デスクトップ\コーディング\AI\line-ai-organizer
+
+Claude Codeを起動
+claude
+
