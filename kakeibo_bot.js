@@ -95,6 +95,16 @@ async function parseExpenseWithAI(userMessage) {
 function getGoogleSheetsClient() {
   // GOOGLE_PRIVATE_KEY の \n を実際の改行に変換
   const privateKey = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n");
+  
+  // ↓ デバッグ用（確認後に削除）
+  console.log("=== PRIVATE_KEY DEBUG ===");
+  console.log("先頭40文字:", privateKey.substring(0, 40));
+  console.log("改行含む?:", privateKey.includes("\n"));
+  console.log("メール:", process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL);
+  console.log("SPREADSHEET_ID:", process.env.SPREADSHEET_ID);
+  console.log("========================");
+  // ↑ ここまで
+
 
   const auth = new google.auth.GoogleAuth({
     credentials: {
