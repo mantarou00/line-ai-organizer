@@ -96,14 +96,19 @@ function getGoogleSheetsClient() {
   // GOOGLE_PRIVATE_KEY の \n を実際の改行に変換
   const privateKey = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n");
   
-  // ↓ デバッグ用（確認後に削除）
-  console.log("=== PRIVATE_KEY DEBUG ===");
-  console.log("先頭40文字:", privateKey.substring(0, 40));
+  // ↓ デバッグ用
+  console.log("=== DEBUG ===");
   console.log("改行含む?:", privateKey.includes("\n"));
   console.log("メール:", process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL);
   console.log("SPREADSHEET_ID:", process.env.SPREADSHEET_ID);
-  console.log("========================");
+  console.log("=============");
   // ↑ ここまで
+
+  const auth = new google.auth.GoogleAuth({
+ログの内容を教えてもらえれば原因が特定できます！
+
+
+
 
 
   const auth = new google.auth.GoogleAuth({
@@ -127,7 +132,7 @@ async function appendToSheet(expense) {
   const sheets = getGoogleSheetsClient();
   const spreadsheetId = process.env.SPREADSHEET_ID;
 
-  // シート名を指定（デフォルト: Sheet1）
+  // シート名を指定（デフォルト: 家計簿データ）
   const range = "Sheet1!A:E";
 
   const now = new Date().toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" });
