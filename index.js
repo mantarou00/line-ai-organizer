@@ -97,6 +97,7 @@ async function handleEvent(event) {
       { role: "user", content: userText }
     ],
     temperature: 0,
+    response_format: { type: "json_object" },
   });
 
   const content = completion.choices[0].message.content.trim();
