@@ -4,3 +4,17 @@ cd C:\Users\zakio\OneDrive\デスクトップ\コーディング\AI\line-ai-orga
 Claude Codeを起動
 claude
 
+
+
+
+GitHubにpush
+git add kakeibo_bot.js
+git commit -m "debug: add log"
+git push
+
+Renderが自動デプロイするのを待つ
+
+Renderのダッシュボードで「Deploy」が完了するまで待つ（1〜2分）
+ LINEでメッセージを送る
+例：「コンビニで昼食600円」
+
